@@ -12,3 +12,36 @@ Create a Django project as usual
 ```
 
 ## React JS Hacks
+### Simple skeleton
+```
+<script type="text/babel">
+var CommentBox = React.createClass({
+    render: function() {
+        return (
+            <div>
+                <h1>Welcome</h1>
+            </div>
+        );
+    }
+});
+ReactDOM.render(<CommentBox/>, document.body);
+</script>
+```
+### Multiple components
+```
+<script type="text/babel">
+    var Paragraph = React.createClass({
+        render:function(){
+            return(
+                <div>
+                    <h2>Hello there</h2>
+                    <h2>This is a sample</h2>
+                </div>
+            );
+        }
+    });
+    ReactDOM.render(<div><Paragraph/><Paragraph/></div>,document.getElementById("root"));
+</script>
+```
+
+### Props and events
