@@ -10,9 +10,10 @@
 <script src="//fb.me/react-0.14.3.min.js"></script>
 <script src="//fb.me/react-dom-0.14.3.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+<script type="text/jsx" src="{% static "react_part.js" %}"></script>
 
 <body>
-<script type="text/babel">
+{% comment %}<script type="text/babel">
 var CommentBox = React.createClass({
     render: function() {
         return (
@@ -23,7 +24,33 @@ var CommentBox = React.createClass({
     }
 });
 ReactDOM.render(<CommentBox/>, document.body);
+
+</script>{% endcomment %}
+
+<div id="test">
+    <ShoppingList></ShoppingList>
+</div>
+
+<div id="root"></div>
+<script type="text/babel">
+    var Paragraph = React.createClass({
+        render:function(){
+            return(
+                <div>
+                    <h2>Hello there</h2>
+                    <h2>This is a sample</h2>
+                </div>
+            );
+        }
+    });
+    ReactDOM.render(<div><Paragraph/><Paragraph/></div>,document.getElementById("root"));
 </script>
+
+<div id="part2"></div>
+<script type="text/babel">
+    ReactDOM.render(<div><Movie/><Movie/></div>,document.getElementById("part2"));
+</script>
+
 </body>
 
 </html>
