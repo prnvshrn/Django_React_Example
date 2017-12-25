@@ -51,4 +51,21 @@ ReactDOM.render(<div className="btn btn-info">Test</div>,document.getElementById
 ```
 
 ### Event
-
+```
+<script type="text/babel">
+    var Paragraph = React.createClass({
+        comment:function(){
+            alert('Clicked');
+        },
+        render:function(){
+            return(
+                <div>
+                    <button onClick={this.comment} className="btn btn-danger">Cancel</button>
+                    <button className="btn btn-info">Alert</button>
+                </div>
+            );
+        }
+    });
+    ReactDOM.render(<div><Paragraph/></div>,document.getElementById("root"));
+</script>
+```
