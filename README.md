@@ -44,4 +44,11 @@ ReactDOM.render(<CommentBox/>, document.body);
 </script>
 ```
 
-### Props and events
+### Boostrap
+Use className instead of class to display bootstrap changes
+```
+ReactDOM.render(<div className="btn btn-info">Test</div>,document.getElementById("part2"));
+```
+
+### Event
+
