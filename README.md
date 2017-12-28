@@ -69,3 +69,9 @@ ReactDOM.render(<div className="btn btn-info">Test</div>,document.getElementById
     ReactDOM.render(<div><Paragraph/></div>,document.getElementById("root"));
 </script>
 ```
+
+### External JS file
+Simply refer the js file as following.
+```
+<script type="text/babel" src="{% static "react_part2.js" %}"></script>
+```
