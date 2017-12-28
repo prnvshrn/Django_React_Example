@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Title</title>
 </head>
 
@@ -10,23 +9,16 @@
 <script src="//fb.me/react-0.14.3.min.js"></script>
 <script src="//fb.me/react-dom-0.14.3.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-<script type="text/jsx" src="{% static "react_part.js" %}"></script>
+<script>var my_var = "{{ person }}";</script>
+<script type="text/babel" src="{% static "react_part2.js" %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/babel" src="{% static "react_part2.js" %}"></script>
+
 
 <body>
-{% comment %}<script type="text/babel">
-var CommentBox = React.createClass({
-    render: function() {
-        return (
-            <div>
-                <h1>Welcome</h1>
-            </div>
-        );
-    }
-});
-ReactDOM.render(<CommentBox/>, document.body);
-
-</script>{% endcomment %}
-
+{{ person }}
 <div id="test">
     <ShoppingList></ShoppingList>
 </div>
@@ -34,22 +26,57 @@ ReactDOM.render(<CommentBox/>, document.body);
 <div id="root"></div>
 <script type="text/babel">
     var Paragraph = React.createClass({
+        comment:function(){
+            alert('Clicked');
+        },
         render:function(){
             return(
                 <div>
-                    <h2>Hello there</h2>
-                    <h2>This is a sample</h2>
+                    <button onClick={this.comment} className="btn btn-danger">Cancel</button>
+                    <button className="btn btn-info">Alert</button>
                 </div>
             );
         }
     });
-    ReactDOM.render(<div><Paragraph/><Paragraph/></div>,document.getElementById("root"));
+    ReactDOM.render(<div><Paragraph/></div>,document.getElementById("root"));
 </script>
 
 <div id="part2"></div>
 <script type="text/babel">
-    ReactDOM.render(<div><Movie/><Movie/></div>,document.getElementById("part2"));
+    var Paragraph = React.createClass({
+        comment:function(){
+            alert('Clicked');
+        },
+        render:function(){
+            return(
+                <div>
+                    <button onClick={this.comment} className="btn btn-danger">Cancel</button>
+                    <button className="btn btn-info">Alert</button>
+                </div>
+            );
+        }
+    });
+    ReactDOM.render(<div><Paragraph/></div>,document.getElementById("part2"));
 </script>
+
+
+<div id="part3">
+</div>
+<div id="part4"></div>
+<div id="part5"></div>
+<script type="text/babel">
+    var Paragraph = React.createClass({
+        render:function(){
+            return(
+                <div>
+                    <h1>{{ person }}</h1>
+                </div>
+            );
+        }
+    });
+    ReactDOM.render(<div><Paragraph/></div>,document.getElementById("part5"));
+</script>
+
 
 </body>
 

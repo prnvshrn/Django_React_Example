@@ -6,5 +6,5 @@ from django.template import loader
 
 def openWelcome(request):
     template = loader.get_template('test.html')
-    context = {}
+    context = {'person':'Ash'}
     return HttpResponse(template.render(context, request))
