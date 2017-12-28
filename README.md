@@ -75,3 +75,11 @@ Simply refer the js file as following.
 ```
 <script type="text/babel" src="{% static "react_part2.js" %}"></script>
 ```
+
+### Django variable to JS
+Refer the dhango variable before calling the js file , like this
+```
+<script>var my_var = "{{ person }}";</script>
+<script type="text/babel" src="{% static "react_part2.js" %}"></script>
+```
+Then you can use the variable as <b>{variable_name}</b> in the js file.
